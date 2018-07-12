@@ -22,12 +22,7 @@ pipeline {
         echo "Continuing with deployment"
       }
     }
-      
-        stage('SayHi') {
-          steps {
-            echo 'Hi Everyone!'
-          }
-      }
+
     }
   }
   environment {
