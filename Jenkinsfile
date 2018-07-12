@@ -15,6 +15,13 @@ pipeline {
             echo "${TEST_USER_PSW}"
           }
         }
+      
+        stage('SayHi') {
+          steps {
+            echo 'Hi Everyone!'
+          }
+        }
+      }
          stage('Deploy') {
       input {
         message "Should we continue?"
@@ -23,12 +30,6 @@ pipeline {
         echo "Continuing with deployment"
       }
     }
-        stage('SayHi') {
-          steps {
-            echo 'Hi Everyone!'
-          }
-        }
-      }
     }
   }
   environment {
