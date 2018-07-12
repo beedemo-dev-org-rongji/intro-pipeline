@@ -22,7 +22,7 @@ pipeline {
         }
       }
     }
-    stage('Deploy') {
+   stage('Deploy') {
       options {
         timeout(time: 30, unit: 'SECONDS') 
       }
