@@ -24,15 +24,7 @@ pipeline {
       }
     }
     
-        stage('Testing') {
-          
-          stage('Checkpoint') {
-         agent none
-         steps {
-            checkpoint 'Checkpoint'
-         }
-      }
-          
+        stage('Testing') {          
         failFast true
         parallel {
           stage('Java 8') {
@@ -51,7 +43,13 @@ pipeline {
           }
         }
       }
-    
+              
+          stage('Checkpoint') {
+         agent none
+         steps {
+            checkpoint 'Checkpoint'
+         }
+      }
     
   stage('Get Kernel') {
       steps {
