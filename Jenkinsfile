@@ -20,7 +20,11 @@ pipeline {
             echo 'Hi Everyone!'
           }
         }
-          stage('Testing') {
+      
+      }
+    }
+    
+        stage('Testing') {
         failFast true
         parallel {
           stage('Java 8') {
@@ -39,8 +43,8 @@ pipeline {
           }
         }
       }
-      }
-    }
+    
+    
   stage('Get Kernel') {
       steps {
         script {
