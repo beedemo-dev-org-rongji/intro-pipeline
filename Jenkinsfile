@@ -25,6 +25,14 @@ pipeline {
     }
     
         stage('Testing') {
+          
+          stage('Checkpoint') {
+         agent none
+         steps {
+            checkpoint 'Checkpoint'
+         }
+      }
+          
         failFast true
         parallel {
           stage('Java 8') {
